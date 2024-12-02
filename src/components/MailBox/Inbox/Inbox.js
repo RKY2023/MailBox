@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
-import { Table, Col, Container, Row, Button } from 'react-bootstrap';
+import { Table, Container, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
 import { MailActions } from "../../../store/MailSlice";
 import { retrieveMails } from "../../../store/MailCreator";
 import { deleteMail } from "../../../store/MailCreator";
-import { AuthActions } from "../../../store/AuthSlice";
-import useFetch from "../../../hooks/useFetch";
+// import { AuthActions } from "../../../store/AuthSlice";
+// import useFetch from "../../../hooks/useFetch";
 
 const Inbox = (props) => {
     const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import { Table, Container, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
 import { MailActions } from "../../../store/MailSlice";
 import { deleteMail, retrieveMails } from "../../../store/MailCreator";
-import { AuthActions } from "../../../store/AuthSlice";
+// import { AuthActions } from "../../../store/AuthSlice";
 
 const Sent = (props) => {
     const dispatch = useDispatch();

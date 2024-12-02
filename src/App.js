@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
@@ -18,10 +18,6 @@ const App = (props) => {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
   const tokenId = useSelector(state => state.auth.token);
   const uiAlert = useSelector(state => state.ui.alert);
-  console.log('App Component');
-  const runnup = () => {
-    console.log('runnup');
-  }
     
   useEffect(() => {
     console.log('EFFECT UP');

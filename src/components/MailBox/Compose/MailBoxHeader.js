@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { sendMail } from "../../../store/MailCreator";
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
-import htmlToDraft from 'html-to-draftjs';
+// import htmlToDraft from 'html-to-draftjs';
 import { useState } from "react";
 import { useEffect } from "react";
 
 const MailBoxHeader = (props) => {
     const inputEmailsRef = useRef();
     const inputSubjectRef = useRef();
-    const inputBodyRef = useRef();
+    // const inputBodyRef = useRef();
     const dispatch = useDispatch();
     const userEmail = useSelector(state => state.auth.userEmail);
     const [editorState, setEditorState] = useState();

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Table, Col, Container, Row, ListGroup } from 'react-bootstrap';
+import React, { useEffect } from "react";
+import { Col, Row, ListGroup } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Switch, Route, useHistory  } from 'react-router-dom';
-import { retrieveMails } from "../../store/MailCreator";
+import { Switch, Route, useHistory  } from 'react-router-dom';
+// import { retrieveMails } from "../../store/MailCreator";
 // import MailBoxContent from "./MailBoxContent";
 import OpenMail from "./OpenMail/OpenMail";
 import { MailActions } from "../../store/MailSlice";

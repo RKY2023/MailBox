@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Form, Button } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { AuthFirebaseLogin } from "../../store/AuthCreator";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
@@ -60,8 +60,11 @@ const Auth = (props) => {
                     <Form.Control type="email" placeholder="abc@abc.com" ref={inputEmailRef}/>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="********" ref={inputPasswordRef} />
+                    { loginType !== 'login' &&
+                    <>
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type="password" placeholder="********" ref={inputConfirmPassword} />
+                    </>}
                     <Button type='submit' className="mt-3">{(loginType === 'login') ? 'Login':'Sign Up'}</Button>
                     <br></br>
                     <a href='/forgotPassword' className="mt-3 no-underline">Forgot Password?</a>

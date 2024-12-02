@@ -4,7 +4,7 @@ import { Container, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setFalseUnreadMail } from "../../../store/MailCreator";
-import { EditorState, convertToRaw, ContentState, convertFromHTML } from 'draft-js';
+import { EditorState, ContentState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 // import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
