@@ -71,7 +71,7 @@ const OpenMail = (props) => {
         }
         dispatch(MailActions.setMailLabel('openMail'));
         htlmtoraw(bodyHtml);
-    },[isMailRead, dispatch, user, thread, threadData]);
+    },[isMailRead, dispatch, user, thread, threadData, bodyHtml]);
     return (
         <>
         <Container>

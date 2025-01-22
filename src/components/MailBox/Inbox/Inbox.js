@@ -11,15 +11,11 @@ import { deleteMail } from "../../../store/MailCreator";
 const Inbox = (props) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    // console.log(history);
     const mailContent = useSelector(state => state.mail.content);
     const user = useSelector(state => state.auth.user);
     const [isMailRetreived, setIsMailRetreived] = useState(false);
-    // const [data] = useFetch('https://atomic-matrix-193707-default-rtdb.firebaseio.com/Mailbox/'+user+'/inbox.json'); 
-    console.log('Sent Component');
 
     const openMailHandler = (e) => {
-        // console.log(e);
         const getThreadId = e.target.parentElement.getAttribute('data-key');
         if(getThreadId === null)
             return;
@@ -46,7 +42,6 @@ const Inbox = (props) => {
         </tr>
     ));
     useEffect(() =>{
-        console.log('user', user);
         if (!isMailRetreived && user !== ''){
             setIsMailRetreived(true);
             dispatch(retrieveMails(user));

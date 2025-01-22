@@ -35,7 +35,6 @@ const MailSlice = createSlice({
                 existingThreadData[0].unread = false;
                 state.totalUnreadMails--;
             }
-            console.log(state.threadData);
         },
         setMailLabel(state, action) {
             if(action.payload === 'sent'){

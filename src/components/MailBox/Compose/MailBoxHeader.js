@@ -19,7 +19,6 @@ const MailBoxHeader = (props) => {
     const [editorBody, setEditorBody] = useState('');
     const [editorBodyHtml, setEditorBodyHtml] = useState('<p></p>');
     const [clearEditor, setClearEditor] = useState(false);
-    console.log(userEmail);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -41,7 +40,6 @@ const MailBoxHeader = (props) => {
 
     const setEditorValue = (editorState) => {
         const tt = editorState.getCurrentContent().getPlainText();
-        console.log(tt);
         setEditorState(editorState);
         setEditorBody(tt);
     };
@@ -54,7 +52,6 @@ const MailBoxHeader = (props) => {
             const raw = convertToRaw(currrentState);
             const html = draftToHtml(raw);
             setEditorBodyHtml(html);
-            console.log(html);
         }
         draftHTML();
     },[editorState])

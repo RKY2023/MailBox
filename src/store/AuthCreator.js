@@ -30,7 +30,6 @@ export const AuthFirebaseLogin = (userData) => {
                     }
                 });
                 const data = await response.json();
-                console.log(data);
                 if( data && data.error && data.error.message){
                     dispatch(uiActions.showAlert(data.error.message));
                     throw new Error(data.error.message);

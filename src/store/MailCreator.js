@@ -18,10 +18,8 @@ export const sendMail = (mailData) => {
                 }
             });
             const data = await response.json();
-            console.log(data);
             dispatch(uiActions.showAlert('Mail sent.'));
         } catch (err) {
-            console.log(err);
             dispatch(uiActions.showAlert('sending mail failed.'));
         }
         // mail set to inbox box of receiver
@@ -34,7 +32,6 @@ export const sendMail = (mailData) => {
                 }
             });
             const data = await response.json();
-            console.log(data);
         } catch (err) {
             console.log(err);
         }
@@ -50,7 +47,6 @@ export const retrieveMails = (user,type='inbox') => {
             }
             const response = await fetch('https://atomic-matrix-193707-default-rtdb.firebaseio.com/Mailbox/'+user+'/'+type+'.json');
             const data = await response.json();
-            console.log(data);
             const loadedData = [];
             if(data)
             for( const k in data){
@@ -66,7 +62,6 @@ export const retrieveMails = (user,type='inbox') => {
             };
             dispatch(MailActions.sendContent(loadedData));
         } catch (err) {
-            console.log(err);
             dispatch(uiActions.showAlert('Inbox loading failed.'));
         }
     };
@@ -88,7 +83,6 @@ export const setFalseUnreadMail = (user,threadId) => {
                 }
             });
             const data = await response.json();
-            console.log(data);
             // if(data)
             dispatch(MailActions.setReadMail());
         } catch (err) {
@@ -111,12 +105,10 @@ export const deleteMail = (user,threadId,mailBoxtype) => {
                 method: 'DELETE',
             });
             const data = await response.json();
-            console.log(data);
             if(response.ok)
             dispatch(MailActions.deleteMail(threadId));
             dispatch(uiActions.showAlert('Mail deleted'));
         } catch (err) {
-            console.log(err);
             dispatch(uiActions.showAlert('Failed to delete Mail'));
         }
     };

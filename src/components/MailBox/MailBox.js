@@ -14,8 +14,6 @@ const MailBox = (props) => {
     const history = useHistory();
     const totalUnreadMails = useSelector(state => state.mail.totalUnreadMails);
     const mailBoxtype = useSelector(state => state.mail.mailLabelselected);
-  
-    console.log('Mail Component');
 
     const sentBoxHandler = () =>{
         dispatch(MailActions.setMailLabel('sent'));
@@ -34,7 +32,7 @@ const MailBox = (props) => {
             history.replace('/mail');
         }
        
-    },[mailBoxtype]);
+    },[mailBoxtype, history]);
 
     return (
     <Row className="m-3">

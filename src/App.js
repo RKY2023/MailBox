@@ -20,13 +20,11 @@ const App = (props) => {
   const uiAlert = useSelector(state => state.ui.alert);
     
   useEffect(() => {
-    console.log('EFFECT UP');
     dispatch(AuthActions.checkIsLoggedIn());
     if(isAuthenticated){
       dispatch(lookupUser(tokenId));
     }
-    console.log('EFFECT DOWN');
-  },[isAuthenticated]);
+  },[isAuthenticated, dispatch, tokenId]);
 
   return (
     <>  
